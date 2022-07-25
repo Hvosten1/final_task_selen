@@ -9,3 +9,4 @@ class MainPage(BasePage):
         login_link = self.find_element(By.CSS_SELECTOR, "#login_link")
         login_link.click()
 
+
