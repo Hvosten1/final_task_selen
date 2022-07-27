@@ -4,7 +4,9 @@ from selenium.webdriver.chrome.options import Options
 
 options = Options()
 options.add_experimental_option('prefs', {'intl.accept_languages': 'en'})
-browser = webdriver.Chrome(options=options)
+options.add_argument('headless')
+options.add_argument('window-size=1920x935')
+
 
 
 
@@ -12,6 +14,7 @@ browser = webdriver.Chrome(options=options)
 def browser(request):
     print("\nstart chrome browser for test..")
     browser = webdriver.Chrome(options=options)
+    browser.implicitly_wait(3)
     yield browser
     print("\nquit browser..")
     browser.quit()

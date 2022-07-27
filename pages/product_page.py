@@ -11,7 +11,6 @@ class ProductPage(BasePage):
         self.equals_names()
         self.equals_prices()
 
-
     def should_be_product_url(self):
         assert 'promo' in self.url, "It's not product page"
         assert True
@@ -29,5 +28,3 @@ class ProductPage(BasePage):
     def click_purchase(self):
         sub_elem = self.browser.find_element(*ProductPageLocators.PURCHASE_BUTTON)
         sub_elem.click()
-
-
