@@ -14,7 +14,7 @@ options.add_argument('window-size=1920x935')
 def browser(request):
     print("\nstart chrome browser for test..")
     browser = webdriver.Chrome(options=options)
-    browser.implicitly_wait(3)
+    #browser.implicitly_wait(3)
     yield browser
     print("\nquit browser..")
     browser.quit()
