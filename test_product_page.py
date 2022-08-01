@@ -1,12 +1,12 @@
-import time
+
 
 import pytest
 
-from pages.locators import ProductPageLocators
+
 from pages.login_page import LoginPage
 from pages.product_page import ProductPage
 from pages.basket_page import BasketPage
-import time # в начале файла
+import time
 
 
 link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
@@ -62,7 +62,7 @@ def test_guest_cant_see_success_message(browser):
     page.should_not_be_success_message()
 
 @pytest.mark.xfail
-def test_guest_cant_see_success_message_after_adding_product_to_basket(browser, link):
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = ProductPage(browser, link)
     page.open()
     page.click_purchase()
@@ -73,7 +73,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser, 
 
 
 @pytest.mark.xfail
-def test_message_disappeared_after_adding_product_to_basket(browser, link):
+def test_message_disappeared_after_adding_product_to_basket(browser):
     page = ProductPage(browser, link)
     page.open()
     page.click_purchase()
