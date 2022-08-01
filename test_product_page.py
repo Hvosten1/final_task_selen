@@ -3,9 +3,9 @@
 import pytest
 
 
-from pages.login_page import LoginPage
-from pages.product_page import ProductPage
-from pages.basket_page import BasketPage
+from .pages.login_page import LoginPage
+from .pages.product_page import ProductPage
+from .pages.basket_page import BasketPage
 import time
 
 
@@ -20,7 +20,6 @@ class TestUserAddToBasketFromProductPage:
         page = LoginPage(browser, "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/")
         page.open()
         page.register_new_user(email, password)
-        time.sleep(10)
         page.should_be_authorized_user()
 
     @pytest.mark.need_review
