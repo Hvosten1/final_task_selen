@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    BUCKET_BUTTON = (By.CSS_SELECTOR,"#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs "
-                                     "> span > a")
+    #BUCKET_BUTTON = (By.CSS_SELECTOR,"#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs "
+                                    # "> span > a")
 
 
 class LoginPageLocators:
@@ -19,7 +19,7 @@ class ProductPageLocators:
     PURCHASE_NAME = (By.CSS_SELECTOR, "div.alertinner strong")
     BUCKET_TOTAL = (By.CSS_SELECTOR, "div.alert.alert-safe.alert-noicon.alert-info strong ")
     BOOK_PRICE = (By.CSS_SELECTOR, "div.col-sm-6.product_main p.price_color")
-    BUCKET_BUTTON =(By.XPATH, "//*[@id='default']/header/div[1]/div/div[2]/span/a")
+    #BUCKET_BUTTON =(By.XPATH, "//*[@id='default']/header/div[1]/div/div[2]/span/a")
 
 class BasketPageLocators:
     STATUS = (By.CSS_SELECTOR, "div [id=content_inner] p")
@@ -28,5 +28,4 @@ class BasketPageLocators:
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
-    BUCKET_BUTTON = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs "
-                                      "> span > a")
+    BUCKET_BUTTON = (By.CSS_SELECTOR, "div.basket-mini.pull-right.hidden-xs a")

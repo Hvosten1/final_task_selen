@@ -31,9 +31,9 @@ class ProductPage(BasePage):
         sub_elem = self.browser.find_element(*ProductPageLocators.PURCHASE_BUTTON)
         sub_elem.click()
 
-    def go_to_bucket(self):
-        bucket_elem = self.browser.find_element(*ProductPageLocators.BUCKET_BUTTON)
-        bucket_elem.click()
+    #def go_to_bucket(self):
+     #   bucket_elem = self.browser.find_element(*ProductPageLocators.BUCKET_BUTTON)
+     #   bucket_elem.click()
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.PURCHASE_NAME), \

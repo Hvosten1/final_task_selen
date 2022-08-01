@@ -12,8 +12,3 @@ class MainPage(BasePage):
     def __init__(self, *args, **kwargs):
         super(MainPage, self).__init__(*args, **kwargs)
 
-    def go_to_bucket(self):
-        bucket_elem = WebDriverWait(self.browser, 3).until(
-            EC.element_to_be_clickable(BasePageLocators.BUCKET_BUTTON)
-            )
-        bucket_elem.click()

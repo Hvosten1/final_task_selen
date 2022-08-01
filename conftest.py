@@ -4,8 +4,8 @@ from selenium.webdriver.chrome.options import Options
 
 options = Options()
 options.add_experimental_option('prefs', {'intl.accept_languages': 'en'})
-options.add_argument('headless')
-options.add_argument('window-size=1920x935')
+#options.add_argument('headless')
+#options.add_argument('window-size=1920x935')
 
 
 

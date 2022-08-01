@@ -6,12 +6,8 @@ class BasketPage(BasePage):
 
     def busket_is_empty(self):
 
-        empt = self.browser.find_element(*BasketPageLocators.STATUS)
-        text = empt.text
-        assert text == " Your basket is empty. "
+        assert self.is_element_present(*BasketPageLocators.STATUS)
 
     def busket_is_not_empty(self):
 
-        empt = self.browser.find_element(*BasketPageLocators.STATUS)
-        text = empt.text
-        assert text != " Your basket is empty. "
+        assert self.is_not_element_present(*BasketPageLocators.STATUS)

@@ -34,6 +34,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser, 
 
 
 @pytest.mark.parametrize('link', links)
+@pytest.mark.skip
 def test_guest_cant_see_success_message(browser, link):
     page = ProductPage(browser, link)
     page.open()
@@ -49,14 +50,14 @@ def test_message_disappeared_after_adding_product_to_basket(browser, link):
     time.sleep(1)
     page.should_be_disappeared()
 
-
+@pytest.mark.skip
 def test_guest_should_see_login_link_on_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
     page.open()
     page.should_be_login_link()
 
-
+@pytest.mark.skip
 def test_guest_can_go_to_login_page_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
@@ -68,6 +69,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
-    page.go_to_bucket()
-    bu_page = BasketPage(browser, page.url)
+    page.open()
+    bu_page = BasketPage(browser, browser.current_url)
     bu_page.busket_is_empty()
+    time.sleep(5)

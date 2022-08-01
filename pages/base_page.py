@@ -13,7 +13,7 @@ class BasePage:
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
-        self.browser.implicitly_wait(timeout)
+        #self.browser.implicitly_wait(timeout)
 
     def open(self):
         self.browser.get(self.url)
@@ -61,6 +61,14 @@ class BasePage:
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
+
+    def go_to_bucket(self):
+        #self.browser.implicitly_wait(5)
+        if self.is_element_present(*BasePageLocators.BUCKET_BUTTON):
+            bucket_elem = self.browser.find_element(*BasePageLocators.BUCKET_BUTTON)
+            bucket_elem.click()
+        else:
+            raise Exception("Нет такого элемента")
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
